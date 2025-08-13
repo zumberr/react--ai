@@ -5,7 +5,7 @@ import styles from "./Chat.module.css";
 const WELCOME_MESSAGE_GROUP = [
   {
     role: "assistant",
-    content: "Hello! How can I assist you right now?",
+    content: "Hola , como puedo ayudarte el dia de hoy?",
   },
 ];
 
@@ -13,13 +13,11 @@ export function Chat({ messages }) {
   const messagesEndRef = useRef(null);
 const messagesGroups = useMemo(
 () => {
-    // Handle empty messages array
     if (!messages || messages.length === 0) {
     return [];
     }
     
     return messages.reduce((groups, message) => {
-    // Initialize groups with an empty array if it's empty
     if (groups.length === 0) {
         groups.push([]);
     }
@@ -46,10 +44,9 @@ const messagesGroups = useMemo(
     <div className={styles.Chat}>
       {[WELCOME_MESSAGE_GROUP, ...messagesGroups].map(
         (messages, groupIndex) => (
-          // Group
+          
           <div key={groupIndex} className={styles.Group}>
             {messages.map(({ role, content }, index) => (
-              // Message
               <div key={index} className={styles.Message} data-role={role}>
                 <Markdown>{content}</Markdown>
               </div>

@@ -1,5 +1,3 @@
-About me: Software Engineer (2+ years) ◽️ 
-
 
 # AI Chatbot free App
 
